@@ -23,5 +23,7 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	APlussB = FloatA + FloatB;
+
 }
 
