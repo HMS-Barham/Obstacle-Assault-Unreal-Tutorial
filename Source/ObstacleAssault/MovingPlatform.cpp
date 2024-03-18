@@ -16,14 +16,25 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetActorLocation(CubeLocation);
-	
 }
 
 // Called every frame
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	CubeLocation.Y = CubeLocation.Y + 2;
+
+	SetActorLocation(CubeLocation);
+
+	//Move the plattform forward
+		//Add a variable to the appropriate vector
+
+	//Check to see if platform has gone too far
+		//If statement to see if platform has moved more than a set variable.
+
+	//Reverse Platform
+		//Subtract variable from vector
 
 }
 
