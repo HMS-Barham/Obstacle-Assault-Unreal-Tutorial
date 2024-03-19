@@ -23,9 +23,4 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere)
-	FVector CubeLocation = FVector(2, 4, 600);
-
-	
-
 };

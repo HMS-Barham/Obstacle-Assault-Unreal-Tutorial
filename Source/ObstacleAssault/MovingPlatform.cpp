@@ -23,12 +23,12 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	CubeLocation.Y = CubeLocation.Y + 2;
-
-	SetActorLocation(CubeLocation);
-
 	//Move the plattform forward
 		//Add a variable to the appropriate vector
+	FVector CurrentLocation = GetActorLocation();
+	CurrentLocation.X += 2.0;
+
+	SetActorLocation(CurrentLocation);
 
 	//Check to see if platform has gone too far
 		//If statement to see if platform has moved more than a set variable.
