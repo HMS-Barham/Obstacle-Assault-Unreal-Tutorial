@@ -34,9 +34,15 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	//Check to see if platform has gone too far
 		//If statement to see if platform has moved more than a set variable.
-	PlatformDistanceTravelled = FVector::Dist(StartLocation, CurrentLocation);
+	float PlatformDistanceTravelled = FVector::Dist(StartLocation, CurrentLocation);
 	//Reverse Platform
 		//Subtract variable from vector
+	if(PlatformDistanceTravelled >= PlatformMaxDistance)
+	{
+		PlatformVelocity = -PlatformVelocity;
+		StartLocation = GetActorLocation();
+	}
+	
 
 }
 

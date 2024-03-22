@@ -25,11 +25,10 @@ public:
 
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector PlatformVelocity {100, 0, 0};
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	float PlatformMaxDistance {100};
 
 	FVector StartLocation {};
-
-	UPROPERTY(EditAnywhere)
-	double PlatformDistanceTravelled {};
 
 
 };
