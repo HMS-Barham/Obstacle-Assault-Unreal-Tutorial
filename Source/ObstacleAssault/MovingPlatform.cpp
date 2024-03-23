@@ -39,8 +39,10 @@ void AMovingPlatform::Tick(float DeltaTime)
 		//Subtract variable from vector
 	if(PlatformDistanceTravelled >= PlatformMaxDistance)
 	{
+		FVector NormalizedDirection = PlatformVelocity.GetSafeNormal();
+		StartLocation = StartLocation + NormalizedDirection * PlatformMaxDistance;
+		SetActorLocation(StartLocation);
 		PlatformVelocity = -PlatformVelocity;
-		StartLocation = GetActorLocation();
 	}
 	
 
