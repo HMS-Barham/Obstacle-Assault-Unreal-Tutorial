@@ -25,18 +25,20 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//Move the plattform forward
-		//Add a variable to the appropriate vector
+	MovePlatform(DeltaTime);
+
+	RotatePlatform(DeltaTime);
+}
+
+void AMovingPlatform::MovePlatform(float DeltaTime)
+{
 	FVector CurrentLocation = GetActorLocation();
 	CurrentLocation += PlatformVelocity * DeltaTime;
 
 	SetActorLocation(CurrentLocation);
 
-	//Check to see if platform has gone too far
-		//If statement to see if platform has moved more than a set variable.
 	float PlatformDistanceTravelled = FVector::Dist(StartLocation, CurrentLocation);
-	//Reverse Platform
-		//Subtract variable from vector
+
 	if(PlatformDistanceTravelled >= PlatformMaxDistance)
 	{
 		FVector NormalizedDirection = PlatformVelocity.GetSafeNormal();
@@ -44,7 +46,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 		SetActorLocation(StartLocation);
 		PlatformVelocity = -PlatformVelocity;
 	}
-	
-
 }
 
+void AMovingPlatform::RotatePlatform(float DeltaTime)
+{
+	UE_LOG(LogTemp, Warning, TEXT("You Spin Me Right Round"));
+}
