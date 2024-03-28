@@ -29,6 +29,8 @@ private:
 	FVector PlatformVelocity {};
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	float PlatformMaxDistance {};
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	FRotator RotationVelocity {};
 
 	FVector StartLocation {};
 

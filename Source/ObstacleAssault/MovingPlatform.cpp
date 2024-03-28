@@ -58,7 +58,7 @@ float AMovingPlatform::GetDistanceMoved() const
 
 void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
-	UE_LOG(LogTemp, Warning, TEXT("You Spin Me Right Round"));
+	AddActorLocalRotation(RotationVelocity * DeltaTime);
 }
 
 
